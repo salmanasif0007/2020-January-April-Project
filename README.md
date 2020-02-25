@@ -1,2 +1,3 @@
 # Uni-talks
-hello:
+This is our group project site.
+
