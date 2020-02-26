@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+
+        body{
+    margin: 0;
+    padding: 0;
+    background: #0C154A;
+    color: white;
+}
+.main{
+    position: absolute;
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    margin-left:30%;
+    margin-top: 5%;
+}
+.upor{
+    float: left;
+    width: 600px;
+    height: 80px;
+    margin-top: 30px;
+}
+.upor img{
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius:50%;
+    margin-left: 30px;
+}
+.upor h4{
+    float: left;
+    margin-left: 20px;
+    font-weight: 100;
+}
+.upor h2{
+    float: left;
+    margin-left: 10px;
+}
+p{
+    font-size: 17px;
+    margin-left: 30px;
+}
+
+.imges img{
+    width: 550px;
+    height: 300px;
+    margin-left: 30px;
+    border-radius: 15px;
+}
+.btn{
+    width: 600px;
+    margin-top: 30px;
+}
+.btn a{
+    color: #000;
+    text-decoration: none;
+    margin-left: 50px;
+    background: #fff;
+    padding: 12px 18px 12px 18px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.btn a:hover{
+    background: brown;
+    color: #fff;
+}
+
+        /* popup */
+
+        .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #3b4651;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  height:300px;
+  border-radius: 20px;
+}
+.modal-content img{
+    width: 70px;
+    height: 70px;
+    border-radius:50%;
+    margin-left: 30px;
+    margin-top: 130px;
+}
+/* The Close Button */
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myBtn{
+    color: #000;
+    text-decoration: none;
+    margin-left: 50px;
+    background: #fff;
+    padding: 12px 18px 12px 18px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+}
+#myBtn:hover{
+    background: brown;
+    color: #fff;
+}
+input[type="text"]{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    font-size: 22px;
+    margin-left: 30px;
+    margin-top: 140px;
+    border: none;
+    border-bottom:1px solid black;
+    background-color: #3b4651;
+    color: #fff;
+}
+    </style>
+
+
+</head>
+<body>
+    <div class="main">
+        <div class="upor">
+            <img src="<%= images %>" alt="">
+            <h2><%= shekha %></h2>
+            <h4><%= times %></h4>
+        </div>
+
+        <p><%= pera %></p>
+
+        <div class="imges">
+        <img src="<%= ims %>" alt="">
+    </div>
+    <!-- <div class="btn">
+        <a id="myBtn" href=""><%= com %></a>
+    </div>   -->
+   
+    <button id="myBtn">Comment</button>
+    <button id="myBtn">Share</button>
+    <button id="myBtn">Like</button>
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <img src="<%= images %>" alt="">
+            <input type="text" placeholder="text">
+          <span class="close"></span>
+          
+        </div>
+      
+      </div>
+    </div>
+
+    
+
+
+
+    <script>
+        
+        var modal = document.getElementById("myModal");
+        
+        
+        var btn = document.getElementById("myBtn");
+        
+        
+        var span = document.getElementsByClassName("close")[0];
+        
+        
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+</html>
