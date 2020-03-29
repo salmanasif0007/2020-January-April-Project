@@ -1,11 +1,47 @@
-const ejs= require ('ejs')
-const express= require ('express')
-const app= express();
-app.set('view engine','ejs')
-app.get('/',function(req,res){
-    res.render('index',{imgs: 'https://cdn.vox-cdn.com/thumbor/_AjHymGfQPg_6IyQgE-jDM_E5fQ=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/16019250/log_2048.png' ,name:'Shekha Maha',times:'6m',caption:'Lorem ipsum dolor sit amet consectetur',
-    imgs1:'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',
-    Comment  :'Comment',Share:'Share',Like:'Like'
+const express = require ('express')
+const app = express()
+const fs = require('fs');
+
+ app.use(express.urlencoded());
+
+app.get('/',function (req,res){
+  res.sendFile(__dirname+'/result.html');
+ console.log(__dirname);
 })
-    })
-app.listen(3000)
+
+app.post('/Welcome',function(req,res){
+  var n1 = req.body.name;
+  console.log(req.body.name);
+
+  var n2 = req.body.price;
+  console.log(req.body.price);
+
+  var n3 = req.body.handcash;
+  console.log(req.body.handcash);
+
+  // var n4 = req.body.senitizer;
+  // console.log(req.body.senitizer);
+  //
+  // var n5 = req.body.remainingamount;
+  // console.log(req.body.remainingamount);
+
+    //var a= (name);
+    //var b= parseInt(price);
+    //var c= parseInt(handcash);
+    // var d= parseInt(senitizer);
+    // var e= parseInt(remainingamount);
+
+var m=n3/n2;
+var n=n3%n2;
+
+res.write('<h1>'+ n1 +'</h1>')
+res.write('<h1>'+ m +'</h1>')
+res.write('<h1>'+ n +'</h1>')
+
+res.send();
+
+
+
+})
+
+app.listen(3000);
